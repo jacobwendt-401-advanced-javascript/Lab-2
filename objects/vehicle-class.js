@@ -1,35 +1,34 @@
 'use strict';
 
-class Vehicle2 {
+class Vehicle {
     constructor(name, wheels) {
         this.name = name;
         this.wheels = wheels;
     }
 }
 
-Vehicle2.prototype.drive = () => {
+Vehicle.prototype.drive = () => {
     return 'Moving Forward';
 };
 
-Vehicle2.prototype.stop = () => {
+Vehicle.prototype.stop = () => {
     return 'Stopping';
 };
 
-////////////////////////////////////////////////////////////////////////////////
 
-class Car2 extends Vehicle2 {
+class Car extends Vehicle {
     constructor(name) {
-        Vehicle2.call(this, name, 4);
+        super(name, 4);
     }
 }
 
-class Motorcycle2 {
+class Motorcycle extends Vehicle{
     constructor(name) {
-Vehicle2.call(this, name, 2);
+        super(name, 2);
     }
     wheelie() {
 return 'Wheee!';
     }
 }
 
-module.exports = {Car2, Motorcycle2};
+module.exports = {Car, Motorcycle};
